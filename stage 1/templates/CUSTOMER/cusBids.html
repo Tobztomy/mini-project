@@ -1,0 +1,61 @@
+{% extends 'CUSTOMER/common.html' %}
+{% block content %}
+{% load static %}
+
+<div class="dashboard-section pt-120 pb-120">
+
+  <div class="table-wrapper container-fluid">
+    <h3 class="text-capitalize  text-success" style="font-weight: 700;">
+      My biddings
+    </h3>
+
+    <table class="eg-table order-table table mb-0">
+      <thead>
+        <tr class="bg-dark">
+          <th class="text-light">Product</th>
+          <th class="text-light">Product Image</th>
+          <th class="text-light">Seller Name</th>
+          <th class="text-light">Bid Date</th>
+          <th class="text-light">Starting Bid Amount(INR)</th>
+          <th class="text-light">My Bid Amount(INR)</th>
+          <th class="text-light">Status</th>
+          {% comment %} <th class="text-light">Customer Phone</th> {% endcomment %}
+          {% comment %} <th class="text-light">Bid Amount</th>
+          <th class="text-light">Status</th> {% endcomment %}
+          {% comment %} <th class="text-light">Action</th> {% endcomment %}
+          {% comment %} <th class="text-light">Action</th> {% endcomment %}
+        </tr>
+      </thead>
+      {% for i in data %}
+          <tbody>
+            <tr class="text-capitalize">
+              <td>{{ i.productId.productName }}</td>
+              <td data-label="Image">
+                <img alt="image" src="../static/media/{{ i.productId.image }}" class="img-fluid" />
+              </td>
+              <td>{{ i.productId.sellerid.firstName }} {{ i.productId.sellerid.lastName }}</td>
+              <td>{{ i.productId.bidStartDate }}</td>
+              <td>Rs.{{ i.productId.amount }} /-</td>
+              <td>Rs.{{ i.amount }} /-</td>   
+              {% if i.productId.customerid_id == cusId and i.productId.paymentStatus != 'PAID' %}
+              
+              <td style="font-weight: 900; font-family: 'monospace'; font-size: 20px;color:green">
+                {% comment %} <a href="/pay?pid={{i.productId.id}}" class="btn btn-success">PAYMENT</a> {% endcomment %}
+                You won the Bid
+
+              <td>     
+              {% else %}
+              <td style="font-weight: 900; font-family: 'monospace'; font-size: 20px;color:green">
+                You won the Bid
+              <td>     
+                  
+              {% endif %}       
+              {% comment %} <td>{{ i.productId }}</td> {% endcomment %}
+            </tr>
+          </tbody>
+      {% endfor %}
+    </table>
+  </div>
+</div>
+
+{% endblock %}

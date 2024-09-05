@@ -1,0 +1,157 @@
+{% for message in messages %}
+  <script>
+    alert('{{message}}')
+  </script>
+{% endfor %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Mirrored from demo.egenslab.com/html/bidout/preview/index3.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 29 Jun 2024 08:50:20 GMT -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bidout - Auction and Bidding HTML Template</title>
+    <link rel="icon" href="{% static 'assets/images/bg/sm-logo.png' %}" type="image/gif" sizes="20x20" />
+    <link rel="stylesheet" href="{% static 'assets/css/animate.css' %}" />
+
+    <link rel="stylesheet" href="{% static 'assets/css/all.css' %}" />
+
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}" />
+
+    <link rel="stylesheet" href="{% static 'assets/css/boxicons.min.css' %}" />
+
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap-icons.css' %}" />
+
+    <link rel="stylesheet" href="{% static 'assets/css/jquery-ui.css' %}" />
+
+    <link rel="stylesheet" href="{% static 'assets/css/swiper-bundle.min.css' %}" />
+
+    <link rel="stylesheet" href="{% static 'assets/css/slick-theme.css' %}" />
+    
+    <link rel="stylesheet" href="{% static 'assets/css/slick.css' %}" />
+
+    <link rel="stylesheet" href="{% static 'assets/css/nice-select.css' %}" />
+
+    <link rel="stylesheet" href="{% static 'assets/css/magnific-popup.css' %}" />
+
+    <link rel="stylesheet" href="{% static 'assets/css/odometer.css' %}" />
+
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}" />
+  </head>
+  <body>
+    {% comment %} <div class="preloader style-3">
+      {% endcomment %}
+      <div class="loader">
+        {% comment %} <span></span>
+        <span></span>
+        <span></span>
+        <span></span> {% endcomment %}
+      </div>
+    </div>
+
+    <div class="mobile-search">
+      <div class="container">
+        <div class="row d-flex justify-content-center">
+          <div class="col-md-11">
+            <label>What are you lookking for?</label>
+            <input type="text" placeholder="Search Products, Category, Brand" />
+          </div>
+          <div class="col-1 d-flex justify-content-end align-items-center">
+            <div class="search-cross-btn style-3">
+              <i class="bi bi-x"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <header class="header-area style-3">
+      <div class="header-logo">
+        <a href="#"><img alt="image" src="{% static 'assets/images/bg/header3-logo.png' %}" /></a>
+      </div>
+      <div class="main-menu">
+        <div class="mobile-logo-area d-lg-none d-flex justify-content-between align-items-center">
+          <div class="mobile-logo-wrap">
+            <a href="#"><img alt="image" src="{% static 'assets/images/bg/header3-logo.png' %}" /></a>
+          </div>
+          <div class="menu-close-btn">
+            <i class="bi bi-x-lg"></i>
+          </div>
+        </div>
+        <ul class="menu-list">
+          <li class="menu-item-has">
+            <a href="/adminHome" class="drop-down">Home</a>      
+          </li>
+          <li>
+            <a href="/customerList">CUSTOMER</a>
+          </li>
+          <li>
+            <a href="/sellerList">SELLER</a>
+          </li>
+          <li>
+            <a href="/adminFeedback">FEEDBACK</a>
+          </li>
+          <li>
+            <a href="/adminViewProduct">PRODUCTS</a>
+          </li>
+        </ul>
+
+        <div class="d-lg-none d-block">
+          <form class="mobile-menu-form mb-5">
+            <div class="input-with-btn d-flex flex-column">
+              <input type="text" placeholder="Search here..." />
+              <button type="submit" class="eg-btn btn--primary3 btn--sm">Search</button>
+            </div>
+          </form>
+          <div class="hotline two">
+            <div class="hotline-info">
+              {% comment %} <span>Click To Call</span>
+              <h6><a href="tel:347-274-8816">+347-274-8816</a></h6> {% endcomment %}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="nav-right d-flex align-items-center">
+        <div class="hotline d-xxl-flex d-none">
+          <div class="hotline-icon">
+            {% comment %} <img alt="image" src="{% static 'assets/images/icons/header-phone.svg' %}" /> {% endcomment %}
+          </div>
+          <div class="hotline-info">
+            {% comment %} <span>Click To Call</span>
+            <h6><a href="tel:347-274-8816">+347-274-8816</a></h6> {% endcomment %}
+          </div>
+        </div>
+        {% comment %} <div class="search-btn">
+          {% endcomment %}
+          {% comment %} <i class="bi bi-search"></i> {% endcomment %}
+        </div>
+        <div class="eg-btn btn--primary3 header-btn">
+          <a href="/login">Logout</a>
+        </div>
+        <div class="mobile-menu-btn d-lg-none d-block">
+          <i class="bx bx-menu"></i>
+        </div>
+      </div>
+    </header>
+
+  
+    {% block content %}
+
+    {% endblock %}
+    <script data-cfasync="false" src="../../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery-3.6.0.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery-ui.js' %}"></script>
+    <script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'assets/js/wow.min.js' %}"></script>
+    <script src="{% static 'assets/js/swiper-bundle.min.js' %}"></script>
+    <script src="{% static 'assets/js/slick.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.nice-select.js' %}"></script>
+    <script src="{% static 'assets/js/odometer.min.js' %}"></script>
+    <script src="{% static 'assets/js/viewport.jquery.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'assets/js/main.js' %}"></script>
+  </body>
+
+  <!-- Mirrored from demo.egenslab.com/html/bidout/preview/index3.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 29 Jun 2024 08:50:45 GMT -->
+</html>

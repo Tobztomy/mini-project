@@ -1,0 +1,62 @@
+{% extends 'CUSTOMER/common.html' %}
+{% block content %}
+  {% load static %}
+  {% if data.bidstatus != 'Bid Ended' %}
+    <div class="live-auction-section pt-120 pb-120">
+      <div class="container">
+        <div class="row gy-4 mb-60 d-flex justify-content-center">
+          {% for i in data %}
+            {% if i.bidstatus != 'Bid Ended' %}
+              <div class="col-lg-4 col-md-6 col-sm-10">
+                <div data-wow-duration="1s" data-wow-delay="0.2s" class="eg-card auction-card1 wow fadeInDown">
+                  <div class="auction-img">
+                    <img style="width: 350px; height: 200px;" alt="image" src="../static/media/{{ i.image }}" />
+                    <div class="author-area">
+                      <div class="author-emo">
+                        <img alt="image" src="../static/assets/images/icons/admin.svg" />
+                      </div>
+                      <div class="author-name">
+                        <span>by {{ i.sellerid.firstName }} {{ i.sellerid.lastName }}</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="auction-content">
+                    <h4><a href="#">{{ i.productName }}</a></h4>
+                    <h6>{{ i.description }}</h6>
+                    <p>
+                      Bidding Price : <span>Rs. {{ i.amount }}/-</span>
+                    </p>
+                    {% if i.bidStartDate <= today_date|date:'Y-m-d' and i.bidstatus != 'Bid Ended' %}
+                      <div class="auction-card-bttm">
+                        <a href="/placeBid?id={{ i.id }}" class="eg-btn btn--primary btn--sm">Place a Bid</a>
+                        <div class="share-area"></div>
+                      </div>
+                    {% elif i.bidStartDate <= today_date|date:'Y-m-d' and i.bidstatus == 'Bid Ended' %}
+                      <div class="auction-card-bttm">
+                        <a class="eg-btn btn-danger btn--sm">BID ENDED</a>
+                        <div class="share-area"></div>
+                      </div>
+                    {% elif i.bidStartDate > today_date|date:'Y-m-d' and i.bidStartDate != null %}
+                      <div class="auction-card-bttm">
+                        <a class="eg-btn btn-danger btn--sm">BIDDING ON {{ i.bidStartDate }}</a>
+                        <div class="share-area"></div>
+                      </div>
+                    {% elif i.bidStartDate == null %}
+                      <div class="auction-card-bttm">
+                        <a class="eg-btn btn-danger btn--sm">Date Not Declared</a>
+                        <div class="share-area"></div>
+                      </div>
+                    {% endif %}
+                  </div>
+                </div>
+              </div>
+              {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    {% else %}
+    <h1>sdkk</h1>
+  {% endif %}
+  
+{% endblock %}

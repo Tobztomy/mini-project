@@ -1,0 +1,25 @@
+{% extends 'ADMIN/common.html' %}
+{% block content %}
+{% load static %}
+
+
+
+<div class="hero-area hero-style-three">
+  {% comment %} <a href="join-merchant.html" class="join-merchant">Join Merchant</a> {% endcomment %}
+  <img alt="image" src="{% static 'assets/images/bg/home3-banner.png' %}" class="home3-banner img-fluid" />
+  <img alt="image" src="{% static 'assets/images/bg/home3-ellipse.png' %}" class="img-fluid banner-ellips" />
+  <div class="container-lg container-fluid">
+    <div class="row d-flex justify-content-start align-items-end">
+      <div class="col-xl-7 col-lg-7 px-0">
+        <div class="banner3-content">
+          <span class="wow fadeInDown" data-wow-duration="1.5s" data-wow-delay="0.5s">Welcome To ADMIN PAGE</span>
+          <h1 class="wow fadeInDown" data-wow-duration="1.5s" data-wow-delay="1s">Build, Sell & Collect Digital items.</h1>
+          <p class="wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="1s">Nulla facilisi. Maecenas ac tellus ut ligula interdum convallis. Nullam dapibus on erat in dolor posuere, none hendrerit lectus ornare. Suspendisse sit amet turpina sagittis, ultrices dui et, aliquam urna.</p>
+          {% comment %} <a href="/signup" class="eg-btn btn--primary3 btn--lg wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.8s">SIGN UP NOW </a> {% endcomment %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
